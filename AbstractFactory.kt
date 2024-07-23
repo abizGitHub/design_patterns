@@ -4,7 +4,7 @@ interface PaintingFactory {
     fun getColor(): Color
     fun getBrushStroke(): BrushStroke
     fun getFabric(): Fabric
-    fun draw() = "${getColor().shine()} on ${getFabric().getFiber()} using ${getBrushStroke().putOnSurface()}"
+    fun draw() = println("${getColor().shine()} on ${getFabric().getFiber()} using ${getBrushStroke().putOnSurface()}")
 }
 
 object VanGoghPaintingFactory : PaintingFactory {
@@ -35,11 +35,9 @@ object CustomPaintingFactory {
 fun main() {
     VanGoghPaintingFactory
         .draw()
-        .also { println(it) }
 
     CustomPaintingFactory
         .withStyle(CustomPaintingFactory.Style.MODERN)
         .draw()
-        .also { println(it) }
 }
 
