@@ -47,7 +47,6 @@ class TreeDisplayStrategy : DisplayStrategy {
                 println("$spaces${fileSystemEntity.getName()} ..")
                 fileSystemEntity.getChildren().forEach { display(it, level + 1) }
             }
-            else -> "can't open.."
         }
     }
 }

@@ -4,13 +4,13 @@ interface FileSystemEntity {
     fun show(): String
 }
 
-class File(private val name: String) : FileSystemEntity {
+open class File(private val name: String) : FileSystemEntity {
     override fun getName() = name
     override fun getChildren() = null
     override fun show() = "$name!"
 }
 
-class Directory(private val name: String) : FileSystemEntity {
+open class Directory(private val name: String) : FileSystemEntity {
     override fun getName() = name
     private val subSet = mutableListOf<FileSystemEntity>()
     override fun getChildren() = subSet
